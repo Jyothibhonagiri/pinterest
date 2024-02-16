@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PINTEREST</title>
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 40%;
+        }
+
+        .formcontainer {
+            width: 350px;
+            height: 400px;
+            border: 2px solid;
+            text-align: center;
+            background-color: lemonchiffon;
+            border-radius: 8%;
+        }
+
+        form input {
+            width: 200px;
+            height: 30px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        nav {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            color: purple;
+            font-size: 23px;
+            font-family: sans-serif;
+            position: fixed;
+            top: 0px;
+            bottom: 10%;
+        }
+
+        nav a {
+            text-decoration: none;
+        }
+        .navbar2{
+            display: flex;
+            width:100%;
+            height:50px;
+            margin-top: 5%;
+            display: none;
+        }
+        .navbar3{
+            display: flex;
+            width:30px;
+            height: 400px;
+            background-color: white;
+            flex-direction: column;
+            display: none;
+            gap: 20px;
+        }
+        .navbar2:hover+.navbar3{
+            display: flex;
+        }
+
+        #search {
+            width: 300px;
+            background-color: lavenderblush;
+            height: 30px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 18px;
+            font-family: sans-serif;
+        }
+        .btn{
+            width:100px;
+            height:30px;
+            background-color: black;
+            color: white;
+            display: none;
+            position: absolute;
+            top:5%;
+            left:80%;
+            border-radius: 20px;
+        }
+        .demo1:hover+.btn{
+        display: block;
+        }
+
+        .imgcontainer {
+            margin-top: 5%;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 300px 300px 300px 300px;
+            grid-template-rows: auto auto auto auto auto;
+            margin-left: 5%;
+            column-gap: 5px;
+            row-gap: 10px;
+        }
+         .imgcontainer button{
+            border-radius: 50%;
+            height: 30px;
+            width:30px;
+            cursor: pointer;
+         }
+        
+        #Create {
+            width: 100%;
+            height: 100vh;
+            margin-top: 3%;
+        }
+
+        .header-section {
+            padding-top: 5%;
+        }
+        .header-section h1{
+            margin-left: 10%;
+        }
+
+        .card1 {
+            margin-left: 20%;
+            width: 400px;
+            height: 300px;
+            background-color: rgb(213, 219, 224);
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 10%;
+        }
+
+        .card1 i {
+            padding-top: 25%;
+        }
+        #savebtn{
+            background-color:rgb(16, 212, 16) ;
+            height: 30px;
+            width:40px;
+            border-radius: 50%;
+        }
+       @media (max-width:768px){
+          .navbar2{
+            display: flex;
+          }
+          .navcontainer{
+            display: none;
+          }
+          .imgcontainer{
+            grid-template-columns: auto auto;
+            width:300px;
+          }
+       }
+       @media (min-width:769px) and (max-width:1200px){
+        .imgcontainer{
+            grid-template-columns: auto auto auto auto;
+        }
+       }
+
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+
+        <div class="formcontainer" id="loginform">
+            <form>
+                <h1>Login</h1>
+                <i class="fa-solid fa-user"></i> <input id="email" type="text"
+                    placeholder="enter email or number"><br><br>
+                <i class="fa-solid fa-eye-low-vision"></i> <input id="password" type="password"
+                    placeholder="enter password"><br><br>
+                <button onclick="login(event)"
+                    style="width:200px;height: 30px;background-color: aqua;border-radius: 10p;">Login</button>
+                <h5>Don't have an account <a href="">Register</a></h5>
+                <button class="btn1"><img
+                        src="https://tse1.mm.bing.net/th?id=OIP.hGaetDAQWapgIJbIOhPhXwAAAA&pid=Api&P=0&h=180"
+                        style="width:30px;height:30px;border-radius:50% ;" />continue with facebook</button><br><br>
+                <button class="btn2"><img
+                        src="https://tse2.mm.bing.net/th?id=OIP.HG6XtzIxf4Nbo_vZt8T3EAHaHa&pid=Api&P=0&h=180"
+                        style="width:30px;height:30px;border-radius:50% ;" />continue with Google</button>
+            </form>
+        </div>
+
+    </div>
+    <div id="dashboard">
+        <div class="navcontainer">
+            <nav>
+                <img src="https://tse3.mm.bing.net/th?id=OIP.09F15WCuEz8e1c1OwXN1GgHaHa&pid=Api&P=0&h=180"
+                    style="height: 30px;width:50px;" />
+                <a href="#Home">Home</a>
+                <a href="#">Explore</a>
+                <a href="#Create">Create</a>
+                <input  id="search" type="text" placeholder="search" />
+                <a class="demo1" ><i class="fa-regular fa-bell"></i></a>
+                <button class="btn">notifications</button>
+                <a class="demo1" ><i class="fa-regular fa-comment-dots"></i></a>
+                <button class="btn">messages</button>
+                <a class="demo1"><i class="fa-solid fa-user"></i></a>
+                <button class="btn">profile</button>
+            </nav>
+        </div>
+        <div class="navbar2">
+            <div><i class="fas fa-bars"></i></div>
+            <div><h3>PINTEREST</h3></div>
+        </div>
+        <div class="navbar3">
+            <div><a href="#Home">Home</a></div>
+            <div><a href="#Create">Create</a></div>
+            <div>Explore</div>
+        </div>
+        <section id="Home">
+            <div class="imgcontainer">
+                <div> <img src="https://i.pinimg.com/236x/52/18/ae/5218aed1531b1d34bd4c23f409cbb925.jpg" /><br/>
+                    <button id="savebtn">save</button> <button><i class="fa-solid fa-download"></i></button> <button><i
+                            class="fa-solid fa-ellipsis"></i></button></div>
+                <div> <img
+                        src="https://i.pinimg.com/236x/b9/d3/a4/b9d3a477d5e0bff2fbd712bd7adfda9b.jpg" /><br/><button id="savebtn">save</button>
+                    <button><i class="fa-solid fa-download"></i></button> <button><i
+                            class="fa-solid fa-ellipsis"></i></button></div>
+                <div> <img
+                        src="https://i.pinimg.com/236x/ad/3d/5d/ad3d5d9f2487df5977bcaa4f75df7eaf.jpg" /><br/><button id="savebtn">save</button>
+                    <button><i class="fa-solid fa-download"></i></button> <button><i
+                            class="fa-solid fa-ellipsis"></i></button></div>
+                <div> <img
+                        src="https://i.pinimg.com/236x/ca/0f/9a/ca0f9a63d124e84ec87f5ff291096f1e.jpg" /><br/><button id="savebtn">save</button>
+                    <button><i class="fa-solid fa-download"></i></button> <button><i
+                            class="fa-solid fa-ellipsis"></i></button></div>
+                <div> <img
+                        src="https://i.pinimg.com/236x/49/eb/87/49eb877cdfdc4e325ef57bed452f8e7a.jpg" /><br/><button id="savebtn">save</button>
+                    <button><i class="fa-solid fa-download"></i></button> <button><i
+                            class="fa-solid fa-ellipsis"></i></button></div>
+                <div> <img
+                        src="https://i.pinimg.com/236x/54/ea/f6/54eaf66e6d6d0114639a3d913c81992d.jpg" /><br/><button id="savebtn">save</button>
+                    <button><i class="fa-solid fa-download"></i></button> <button><i
+                            class="fa-solid fa-ellipsis"></i></button></div>
+                <div> <img
+                        src="https://i.pinimg.com/236x/96/f4/23/96f4232d307f7649c5b5e261a86249ad.jpg" /><br/><button id="savebtn">save</button>
+                    <button><i class="fa-solid fa-download"></i></button> <button><i
+                            class="fa-solid fa-ellipsis"></i></button></div>
+                <div> <img
+                        src="https://i.pinimg.com/236x/b6/3d/0d/b63d0dd3facc8797f823493feb702cb0.jpg" /><br/><button id="savebtn">save</button>
+                    <button><i class="fa-solid fa-download"></i></button> <button><i
+                            class="fa-solid fa-ellipsis"></i></button></div>
+                <div> <img
+                        src="https://i.pinimg.com/236x/58/2b/2f/582b2f6dddc37aad18a18f04fe30bfdf.jpg" /><br/><button id="savebtn">save</button>
+                    <button><i class="fa-solid fa-download"></i></button> <button><i
+                            class="fa-solid fa-ellipsis"></i></button></div>
+                <div> <img
+                        src="https://i.pinimg.com/236x/3e/c0/5e/3ec05ed81af7ba1b8ad6bc2ec4e4a9ad.jpg" /><br/><button id="savebtn">save</button>
+                    <button><i class="fa-solid fa-download"></i></button> <button><i
+                            class="fa-solid fa-ellipsis"></i></button></div>
+                <div> 
+                    <img src="https://i.pinimg.com/236x/bc/6e/5a/bc6e5a5f12b2b2a5b8eaabaf2c547b09.jpg" /><br/>
+                    <button id="savebtn">save</button>
+                    <button><i class="fa-solid fa-download"></i></button>
+                     <button><i class="fa-solid fa-ellipsis"></i></button>
+                </div>
+                <div> <img
+                        src="https://i.pinimg.com/236x/2e/3a/57/2e3a5739ad64703db808c8f4d1044c25.jpg" /><br/><button id="savebtn">save</button>
+                    <button><i class="fa-solid fa-download"></i></button> <button><i
+                            class="fa-solid fa-ellipsis"></i></button></div>
+                <div> <img
+                        src="https://i.pinimg.com/236x/95/c1/45/95c14552fc09a4cdcc933b523dd953e6.jpg" /><br/><button id="savebtn">save</button>
+                    <button><i class="fa-solid fa-download"></i></button> <button><i
+                            class="fa-solid fa-ellipsis"></i></button></div>
+                <div> <img
+                        src="https://i.pinimg.com/236x/9b/be/0c/9bbe0c9ae1e1bfcf552d5cb23b41a46d.jpg" /><br/><button id="savebtn">save</button>
+                    <button><i class="fa-solid fa-download"></i></button> <button><i
+                            class="fa-solid fa-ellipsis"></i></button></div>
+                <div> <img
+                        src="https://i.pinimg.com/236x/0b/21/90/0b219015deab9ed4384742c90f083ec2.jpg" /><br/><button id="savebtn">save</button>
+                    <button><i class="fa-solid fa-download"></i></button> <button><i
+                            class="fa-solid fa-ellipsis"></i></button></div>
+                <div> <img
+                        src="https://i.pinimg.com/236x/24/6c/91/246c91858fd11107123ea873cfd9b79f.jpg" /><br/><button id="savebtn">save</button>
+                    <button><i class="fa-solid fa-download"></i></button> <button><i
+                            class="fa-solid fa-ellipsis"></i></button></div>
+                <div> <img
+                        src="https://i.pinimg.com/236x/66/ad/b7/66adb70b714dc9b32bcab19b4b8667b6.jpg" /><br/><button id="savebtn">save</button>
+                    <button><i class="fa-solid fa-download"></i></button> <button><i
+                            class="fa-solid fa-ellipsis"></i></button></div>
+                <div> <img
+                        src="https://i.pinimg.com/236x/4c/36/37/4c36375f3a0ebb9335cbdc9e8bd469bf.jpg" /><br/><button id="savebtn">save</button>
+                    <button><i class="fa-solid fa-download"></i></button> <button><i
+                            class="fa-solid fa-ellipsis"></i></button></div>
+                <div> <img
+                        src="https://i.pinimg.com/236x/7f/0e/55/7f0e550ec9df5d4cf7dba8df3cd63791.jpg" /><br/><button id="savebtn">save</button>
+                    <button><i class="fa-solid fa-download"></i></button> <button><i
+                            class="fa-solid fa-ellipsis"></i></button></div>
+                <div> <img
+                        src="https://i.pinimg.com/474x/b0/67/bc/b067bc76896fde1261fe11a6b4fbb911.jpg" /><br/><button id="savebtn">save</button>
+                    <button><i class="fa-solid fa-download"></i></button> <button><i
+                            class="fa-solid fa-ellipsis"></i></button></div>
+            </div>
+        </section>
+        <section id="Create">
+            <div class="header-section">
+                <hr />
+                <h1>Create Pin</h1>
+                <hr />
+                <div class="card">
+                    <div class="card1">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                        <h4>choose a file or drag and drop it here</h4>
+                    </div>
+                
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+</body>
+<script src="pinterest.js"></script>
+
+</html>
